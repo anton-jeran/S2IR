@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"> 
+        
+        <meta name="description" content="SPEECH2IR-GAN: ROOM IMPULSE RESPONSE ESTIMATOR FROM REVERBERANT SPEECH SIGNAL - Audio Demo">
+        <meta name="author" content="Anton Jeran Ratnarajah">
+        
+	    <title>FAST-RIR - Audio Demo</title>
+        
+        <!-- Bootflat CSS -->
+        <link rel="stylesheet" href="css/bootflat.css">
+
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="css/index.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    </head>
+
+    
+    <body>
+        <div id="container">
+            <div id="paper_title"> <h1>SPEECH2IR-GAN: ROOM IMPULSE RESPONSE ESTIMATOR FROM REVERBERANT SPEECH SIGNAL</h1> </div>
+            <div id="paper_authors"> <h3><b>Authors:</b> Anton Ratnarajah, Ishwarya Ananthabhotla, Vamsi Krishna Ithapu, Pablo Hoffmann, Dinesh Manocha and Paul Calamia</h3></div>
+            <!-- <div id="paper_title"> <h2><a href="https://arxiv.org/pdf/2110.04057.pdf">Paper</a><a> | </a><a href="https://github.com/anton-jeran/FAST-RIR">Code</a> | </a><a href="https://www.youtube.com/watch?v=1I8Rr7a2o0k">Presentation</a></h2> </div> -->
+            <div id="paper_abstract"> <b>Abstract:</b>We propose a GAN-based neural network (SPEECH2IR-GAN) to estimate the time domain room impulse response from the reverberant speech. Our SPEECH2IR-GAN network encodes RIR features from the reverberant speech and constructs RIR from the encoded features. We train our network on energy decay relief loss to capture energy-based acoustic properties of reverberant speech. We show that the estimated RIRs using our SPEECH2IR-GAN have similar energy distribution as the ground truth RIR. Our proposed approach outperforms the state-of-the-art RIR estimator in acoustic metrics such as energy decay relief loss and early reflection energy loss by 72\% and 22\% respectively.  Estimated RIRs from our SPEECH2IR-GAN gives the least mean square error when compared to the state-of-the-art method. We estimate RIRs from real-world far-field speech from the AMI corpus and show the benefit of estimated RIRs in a Kaldi automatic speech recognition task.</div>
+
+           
+        <!--     <div id="code">
+                <h2><b>Github</b></h2>
+                <b>Our github code is available here</b>        
+            </div>
+            -->
+            <div id="demos">
+                <h3>Audio Demos</h3>
+                
+                <!--<h4>I. High Noise Samples (SNR - 0dB)</h4>-->
+                <table class="audio_demos">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center;"></th>
+                            <th style="text-align:center;">Clean Speech</th>
+                            <th style="text-align:center;"> Ground truth RIR </th>
+                            <th style="text-align:center;"> Input reverberant speech</th>
+                            <th style="text-align:center;">Estimated RIR using SPEECH2IR-GAN</th>
+                            <th style="text-align:center;"> Clean Speech</th>
+                            <th style="text-align:center;"> Reconstructed reverberant speech using estimated RIR</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr style="border-top:1px solid black">
+                            <td style="padding:0 10px 0 10px;">
+                                <b>Example 1</b>
+                            </td>                          
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/clean_speech/1.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/RIR/1.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/RSPEECH/1.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/SRIR/1.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/clean_speech/1.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/SSPEECH/1.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+        
+                    </tbody>
+                    <tbody>
+                        <tr style="border-top:1px solid black">
+                            <td style="padding:0 10px 0 10px;">
+                                <b>Example 2</b>
+                            </td>                          
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/clean_speech/2.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/RIR/2.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/RSPEECH/2.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/SRIR/2.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/clean_speech/2.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/SSPEECH/2.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+        
+                    </tbody>
+                    <tbody>
+                        <tr style="border-top:1px solid black">
+                            <td style="padding:0 10px 0 10px;">
+                                <b>Example 3</b>
+                            </td>                          
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/clean_speech/3.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/RIR/3.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/RSPEECH/3.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/SRIR/3.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/clean_speech/3.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/SSPEECH/3.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+        
+                    </tbody>
+                    <tbody>
+                        <tr style="border-top:1px solid black">
+                            <td style="padding:0 10px 0 10px;">
+                                <b>Example 4</b>
+                            </td>                          
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/clean_speech/4.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/RIR/4.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/RSPEECH/4.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/SRIR/4.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/clean_speech/4.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/SSPEECH/4.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+        
+                    </tbody>
+                    <tbody>
+                        <tr style="border-top:1px solid black">
+                            <td style="padding:0 10px 0 10px;">
+                                <b>Example 5</b>
+                            </td>                          
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/clean_speech/5.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/RIR/5.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/RSPEECH/5.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/SRIR/5.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/clean_speech/5.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/SSPEECH/5.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+        
+                    </tbody>
+                    <tbody>
+                        <tr style="border-top:1px solid black">
+                            <td style="padding:0 10px 0 10px;">
+                                <b>Example 6</b>
+                            </td>                          
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/clean_speech/6.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/RIR/6.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/RSPEECH/6.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/SRIR/6.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/clean_speech/6.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/SSPEECH/6.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+        
+                    </tbody>
+                    <tbody>
+                        <tr style="border-top:1px solid black">
+                            <td style="padding:0 10px 0 10px;">
+                                <b>Example 7</b>
+                            </td>                          
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/clean_speech/7.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/RIR/7.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/RSPEECH/7.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/SRIR/7.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/clean_speech/7.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/SSPEECH/7.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+        
+                    </tbody>
+                    <tbody>
+                        <tr style="border-top:1px solid black">
+                            <td style="padding:0 10px 0 10px;">
+                                <b>Example 8</b>
+                            </td>                          
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/clean_speech/8.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/RIR/8.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/RSPEECH/8.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/SRIR/8.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/clean_speech/8.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/SSPEECH/8.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+        
+                    </tbody>
+                    <tbody>
+                        <tr style="border-top:1px solid black">
+                            <td style="padding:0 10px 0 10px;">
+                                <b>Example 9</b>
+                            </td>                          
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/clean_speech/9.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/RIR/9.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/RSPEECH/9.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/SRIR/9.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/clean_speech/9.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/SSPEECH/9.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+        
+                    </tbody>
+                    <tbody>
+                        <tr style="border-top:1px solid black">
+                            <td style="padding:0 10px 0 10px;">
+                                <b>Example 1O</b>
+                            </td>                          
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/clean_speech/10.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/RIR/10.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/RSPEECH/10.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/SRIR/10.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/clean_speech/10.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td style="padding:0 10px 0 10px;">
+                                <audio controls class="audio-player" preload="metadata" style="width: 240px;">
+                                    <source src="Audio/SSPEECH/10.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+        
+                    </tbody>
+
+
+
+                   
+                       
+                    
+        
+                    
+                </table>
+            </div>
+
+            
+
+        <div id="footer">
+            <div>
+                <i>&copy October 2022</i><br>
+		<img src="img/meta_icon.png" height="120px" alt="">
+        <img src="img/umd_icon.png" height="240px" alt="">
+            </div>
+	    <!--
+			<div style="display:inline-block;width:240px;">
+	            <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=nTaFtZPYUn89zwQhD9zpswUR2BW5OqbAcpOeLX3H118&co=2d78ad&ct=ffffff&cmo=3acc3a&cmn=ff5353'></script>
+			</div>
+	     -->
+		</div>
+        
+
+    
+    </body>
+</html>
