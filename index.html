@@ -6,7 +6,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"> 
         
-        <meta name="description" content="SPEECH2IR-GAN: ROOM IMPULSE RESPONSE ESTIMATOR FROM REVERBERANT SPEECH SIGNAL - Audio Demo">
+        <meta name="description" content="Towards Improved Room Impulse Response Estimation for Speech Recognition - Audio Demo">
         <meta name="author" content="Anton Jeran Ratnarajah">
         
 	    <title>SPEECH2IR-GAN - Audio Demo</title>
@@ -28,10 +28,10 @@
     
     <body>
         <div id="container">
-            <div id="paper_title"> <h1>SPEECH2IR-GAN: ROOM IMPULSE RESPONSE ESTIMATOR FROM REVERBERANT SPEECH SIGNAL</h1> </div>
+            <div id="paper_title"> <h1>Towards Improved Room Impulse Response Estimation for Speech Recognition</h1> </div>
             <div id="paper_authors"> <h3><b>Authors:</b> Anton Ratnarajah, Ishwarya Ananthabhotla, Vamsi Krishna Ithapu, Pablo Hoffmann, Dinesh Manocha and Paul Calamia</h3></div>
             <!-- <div id="paper_title"> <h2><a href="https://arxiv.org/pdf/2110.04057.pdf">Paper</a><a> | </a><a href="https://github.com/anton-jeran/FAST-RIR">Code</a> | </a><a href="https://www.youtube.com/watch?v=1I8Rr7a2o0k">Presentation</a></h2> </div> -->
-            <div id="paper_abstract"> <b>Abstract:</b>We propose a GAN-based neural network (SPEECH2IR-GAN) to estimate the time domain room impulse response from the reverberant speech. Our SPEECH2IR-GAN network encodes RIR features from the reverberant speech and constructs RIR from the encoded features. We train our network on energy decay relief loss to capture energy-based acoustic properties of reverberant speech. We show that the estimated RIRs using our SPEECH2IR-GAN have similar energy distribution as the ground truth RIR. Our proposed approach outperforms the state-of-the-art RIR estimator in acoustic metrics such as energy decay relief loss and early reflection energy loss by 72\% and 22\% respectively.  Estimated RIRs from our SPEECH2IR-GAN gives the least mean square error when compared to the state-of-the-art method. We estimate RIRs from real-world far-field speech from the AMI corpus and show the benefit of estimated RIRs in a Kaldi automatic speech recognition task.</div>
+            <div id="paper_abstract"> <b>Abstract: We propose to characterize and improve the performance of blind room impulse response (RIR) estimation systems in the context of a downstream application scenario, far-field automatic speech recognition (ASR).  We first draw the connection between improved RIR estimation and improved ASR performance, as a means of evaluating neural RIR estimators.  We then propose a GAN-based architecture that encodes RIR features from reverberant speech and constructs an RIR from the encoded features, and uses a novel energy decay relief loss to optimize for capturing energy-based properties of the input reverberant speech.  We show that our model outperforms the state-of-the-art baselines on acoustic benchmarks (by 72% on the energy decay relief and 22% on the early reflection energy metrics), as well as in an ASR evaluation task (by 6.9% in word error rate).</b></div>
 
            
         <!--     <div id="code">
